@@ -12,7 +12,8 @@ const CardList = ({ robots }) => {
                             key={i} 
                             id={robots[i].imdbID} 
                             title={robots[i].Title} 
-                            director={robots[i].Director} 
+                            year={robots[i].Year} 
+                            poster={robots[i].Poster}
                         />
                     );
                 })

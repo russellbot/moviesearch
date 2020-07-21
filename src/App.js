@@ -13,9 +13,9 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('http://www.omdbapi.com/?t=star+wars&apikey=469942e0')
+        fetch('http://www.omdbapi.com/?s=star+wars&apikey=469942e0')
             .then(response=> response.json())
-            .then(movie => this.setState({ robots: [ movie ]}));
+            .then(movie => this.setState({ robots: movie.Search}));
     }
 
     onSearchChange = (event) => {
