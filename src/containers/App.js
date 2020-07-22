@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
-import Scroll from './Scroll';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
+import Scroll from '../components/Scroll';
 import './App.css';
 
 class App extends Component {
@@ -24,10 +24,11 @@ class App extends Component {
     }
 
     render() {
-        const filteredMovies = this.state.movies.filter(movies => {
-            return movies.Title.toLowerCase().includes(this.state.searchfield.toLowerCase());
+        const { movies, searchfield } = this.state;
+        const filteredMovies = movies.filter(movie => {
+            return movie.Title.toLowerCase().includes(searchfield.toLowerCase());
         })
-        if (this.state.movies.length === 0) {
+        if (movies.length === 0) {
             return <h1>Loading</h1>
         } else {
             return (
