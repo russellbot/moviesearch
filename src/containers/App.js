@@ -15,7 +15,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('http://www.omdbapi.com/?s=star+wars&apikey=469942e0')
+        fetch('https://www.omdbapi.com/?s=star+wars&apikey=469942e0')
             .then(response=> response.json())
             .then(movie => this.setState({ movies: movie.Search}));
     }
