@@ -13,7 +13,7 @@ import { searchMovies, requestMovies } from './reducers';
 const logger = createLogger();
 
 const rootReducer = combineReducers({ searchMovies, requestMovies })
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
 
 ReactDOM.render(
   <React.StrictMode>

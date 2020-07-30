@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CounterButton from './CounterButton';
+// import CounterButton from './CounterButton';
 
 class Header extends Component {
     shouldComponentUpdate(nextProps, nextState) {
@@ -7,11 +7,10 @@ class Header extends Component {
     }
 
     render() {
-        console.log('Header')
         return (
             <div>                
                 <h1 className='f1'>star wars movie search</h1>
-                <CounterButton color={'red'} />
+                {/* <CounterButton color={'red'} /> */}
             </div>
         );
     }
