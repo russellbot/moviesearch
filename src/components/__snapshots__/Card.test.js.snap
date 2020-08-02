@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to render Card component 1`] = `
+<div
+  className="tc navy bg-yellow dib br3 pa3 ma2 grow bw2 shadow-5 mh2 h7"
+  id="card"
+>
+  <img
+    alt="poster"
+    className="h5"
+  />
+  <div>
+    <h2
+      className="mw5 ph1 mh4"
+    />
+    <p>
+      Year: 
+    </p>
+  </div>
+</div>
+`;
