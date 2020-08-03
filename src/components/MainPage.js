@@ -11,25 +11,27 @@ class MainPage extends Component {
         this.props.onRequestMovies();
     }
 
-    render() {
-        const { searchField, onSearchChange, movies, isPending } = this.props;
-        const filteredMovies = movies.filter(movie => {
-            return movie.Title.toLowerCase().includes(searchField.toLowerCase());
+    filterMovies = () => {
+        return this.props.movies.filter(movie => {
+            return movie.Title.toLowerCase().includes(this.props.searchField.toLowerCase());
         })
-        return isPending ?
-            <h1>Loading</h1> :
-            (
+    }
+
+    render() {
+        const { onSearchChange, isPending } = this.props;
+        return (
                 <div className = 'tc'>
                     <Header />
                     <SearchBox searchChange={onSearchChange} />
                     <Scroll>
-                        <ErrorBoundry>
-                            <CardList movies={filteredMovies} />
-                        </ErrorBoundry>
+                        { isPending ? <h1>Loading</h1> :
+                            <ErrorBoundry>
+                                <CardList movies={this.filterMovies()} />
+                            </ErrorBoundry>
+                        }
                     </Scroll>
                 </div>
-            );
-        
+            );        
     }
 }
 
