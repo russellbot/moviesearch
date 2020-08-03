@@ -1,0 +1,21 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Vinyl repair kit';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Vinyl repair kit'), url('../containers/VINYLREPAIRKIT.woff') format('woff');
+}
+
+h1 {
+    font-family: 'Vinyl repair kit';
+    font-weight: 200;
+    color: #e3ee46;
+}
+
+h2 {
+    font-size: large;
+}
+
+img {
+    width: auto;
+}

@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { connect} from 'react-redux';
-import CardList from '../components/CardList';
-import SearchBox from '../components/SearchBox';
-import Scroll from '../components/Scroll';
-import ErrorBoundry from '../components/ErrorBoundry';
-import Header from '../components/Header';
+import MainPage from '../components/MainPage';
 import './App.css';
 
 import { setSearchField, requestMovies } from '../actions.js';
@@ -25,31 +21,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-class App extends Component {
-   
-    componentDidMount() {
-        this.props.onRequestMovies();
-    }
-
+class App extends Component {      
     render() {
-        const { searchField, onSearchChange, movies, isPending } = this.props;
-        const filteredMovies = movies.filter(movie => {
-            return movie.Title.toLowerCase().includes(searchField.toLowerCase());
-        })
-        return isPending ?
-            <h1>Loading</h1> :
-            (
-                <div className = 'tc'>
-                    <Header />
-                    <SearchBox searchChange={onSearchChange} />
-                    <Scroll>
-                        <ErrorBoundry>
-                            <CardList movies={filteredMovies} />
-                        </ErrorBoundry>
-                    </Scroll>
-                </div>
-            );
-        
+        return <MainPage { ...this.props } />
     }
 }
 
