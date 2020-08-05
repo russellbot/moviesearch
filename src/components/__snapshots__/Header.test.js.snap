@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to render Header component 1`] = `
+<div>
+  <h1
+    className="f1"
+  >
+    star wars movie search
+  </h1>
+</div>
+`;
